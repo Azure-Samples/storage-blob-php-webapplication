@@ -1,0 +1,5 @@
+{
+    "require": {
+        "microsoft/azure-storage": "^0.10.0"
+    }
+}

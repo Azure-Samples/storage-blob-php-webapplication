@@ -1,0 +1,45 @@
+<div>
+<h2>Azure Storage Blob Models Sample in PHP</h2>
+<p>
+	This sample demonstrates making a use of models provided by <b>Microsoft Azure Storage SDK for PHP</b>. Generally, this sample contains two main parts, one demonstrates how to use models during creating options of containers and block blobs, and the other part demonstrates how to use models during getting containers, blobs and their properties and contents.
+	<blockquote>
+		<b>Note</b>
+		<p>
+			This sample contains an Angular SPA as the client part and one PHP script for all the requests from client, for keeping the pure PHP code of usage of models provided by Azure Storage SDK for PHP.
+		</p>
+	</blockquote>
+</p>
+
+<h3>Preparation</h3>
+<p>
+	<ol>
+		<li>An Azure Storage Account</li>
+		<li>PHP 5.5 or above</li>
+		<li>Composer manage PHP dependencies and npm manage the dependencies for client side</li>
+		<li>Gulp manage client scripts</li>
+	</ol>
+</p>
+<h3>Creation</h3>
+<p>
+	We will follow the steps to create a container, upload a text file to this container devided into several block blobs, then will upload a video file to this container in chunks. After the creation, we can start the other part of trial. 
+</p>
+
+<h4>Step 1. <small>Create trial container</small></h4>
+<p>During this step, we will create a trial container, and set the Public Access and custom the metadata via <code>MicrosoftAzure\Storage\Blob\Models\CreateContainerOptions</code>.</p>
+<button type="button" class="btn btn-primary" ng-disabled="isShow_c" ng-click="createContainer()">Create</button>
+<loading show="isShow_c"></loading>
+<div class="alert alert-info" role="alert" ng-show="message_c">{{message_c}}</div>
+
+<h4>Step 2. <small>Create trial text block blobs</small></h4>
+<p>During this step, we will upload a markdown text file to the container created preview, set a <code>contentType</code> property and custom the metadata via <code>MicrosoftAzure\Storage\Blob\Models\CreateBlobOptions</code>, and divid the file into several small block blobs for the later trial.</p>
+<button type="button" class="btn btn-primary" ng-disabled="isShow_t" ng-click="createTextBlob()">Create</button>
+<loading show="isShow_t"></loading>
+<div class="alert alert-info" role="alert" ng-show="message_t">{{message_t}}</div>
+
+<h4>Step 3. <small>Create trial video block blobs</small></h4>
+<p>During this step, we will upload a video file to the container created preview. It will be divided into <code>MicrosoftAzure\Storage\Blob\Models\Block</code>, then will be set a <code>contentType</code> property and custom the metadata via <code>MicrosoftAzure\Storage\Blob\Models\CommitBlobBlocksOptions</code>.</p>
+<button type="button" class="btn btn-primary" ng-disabled="isShow_v" ng-click="createVideoBlob()">Create</button>
+<loading show="isShow_v"></loading>
+<div class="alert alert-info" role="alert" ng-show="message_v">{{message_v}}</div>
+
+</div>

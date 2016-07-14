@@ -1,0 +1,25 @@
+<h1>Trial Test Container</h1>
+<div class="panel panel-default" ng-repeat="c in containers">
+	<div class="panel-heading">
+		<div class="panel-title"><i class="glyphicon glyphicon-folder-open"></i><strong style="padding-left: 10px;">{{c.name}}</strong></div>
+	</div>
+	<div class="panel-body">
+		<div class="list-group">
+		  <div class="list-group-item">
+		    <h4 class="list-group-item-heading">Metadata</h4>
+		    <p class="list-group-item-text well" ng-repeat="(m_key,m_value) in c.metadata">
+		    	<strong>{{m_key}}</strong>:{{m_value}}
+		    </p>
+		  </div>
+		  <div class="list-group-item">
+		    <h4 class="list-group-item-heading">Properties</h4>
+		    <p class="list-group-item-text well" ng-repeat="(p_key,p_value) in c.properties">
+		    	<strong>{{p_key}}</strong>:{{p_value}}
+		    </p>
+		  </div>
+		</div>
+	</div>
+	<div class="panel-footer text-right">
+	<a type="button" class="btn btn-link" href="/trial/{{c.name}}">enter container</a>
+	</div>
+</div>
