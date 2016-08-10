@@ -1,7 +1,7 @@
 ---
 services: storage
 platforms: php
-author: danielxu-msft
+author: msonecode
 ---
 
 # How to use Azure Storage blob modules by PHP
